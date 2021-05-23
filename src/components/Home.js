@@ -2,45 +2,13 @@ import React from 'react'
 
 
 function Home(props) {
-    const variable1 = {
-        "gender": "male",
-        "name": {
-            "title": "Mr",
-            "first": "Slavko",
-            "last": "Roch"
-        },
-        "location": {
-            "street": {
-                "number": 5147,
-                "name": "Marktplatz"
-            },
-            "city": "Weiden in der Oberpfalz",
-            "state": "Rheinland-Pfalz",
-            "country": "Germany",
-            "postcode": 34372,
-            "coordinates": {
-                "latitude": "-41.3821",
-                "longitude": "-98.7363"
-            },
-            "timezone": {
-                "offset": "+3:30",
-                "description": "Tehran"
-            }
-        },
-        "email": "slavko.roch@example.com",
-        "picture": {
-            "large": "https://randomuser.me/api/portraits/men/77.jpg",
-            "medium": "https://randomuser.me/api/portraits/med/men/77.jpg",
-            "thumbnail": "https://randomuser.me/api/portraits/thumb/men/77.jpg"
-        },
-        "nat": "DE"
-    }
+
     const { picture,
         gender,
         name,
         location,
         timezone,
-    } = variable1
+    } = props.data
 
     return (
         <div>
@@ -57,13 +25,12 @@ function Home(props) {
 
                                     </div>
                                     <div className="col-lg-9 col-md-10 col-sm-10 m-auto">
-                                        <label style={{ color: txtColor.color, fontSize: '55px', fontWeight: 'bold', textDecoration: 'underline', display: 'flex', marginBottom: '2px' }}>{name.title} {name.first} {name.last}</label>
-                                        <label style={{ display: 'flex', fontWeight: '600', fontSize: '18px' }}><p style={{ color: txtColor.color1 }}>{location.street.number}</p> {location.street.name},{location.city},{location.state},{location.country},{location.postcode}</label>
+                                        <label style={{ color: txtColor.color, fontSize: '45px', fontWeight: 'bold', textDecoration: 'underline', display: 'flex', marginBottom: '2px' }}>{name.title} {name.first} {name.last}</label>
+                                        <label style={{ display: 'flex', fontWeight: '600', fontSize: '18px' }}><p style={{ color: txtColor.color1 }}>{location.street.number}, </p>  {location.street.name}, {location.city}, {location.state}, {location.country}, {location.postcode}</label>
                                         <label style={{ display: 'flex', fontWeight: '600', fontSize: '18px' }}>{location.timezone.offset},{location.timezone.description}</label>
-                                        <label style={{ display: 'flex', fontWeight: '400', color: txtColor.color2, fontSize: '18px' }}>{gender}</label>
+                                        <label style={{ display: 'flex', fontWeight: '400', color: txtColor.color2, fontSize: '18px', textTransform: 'capitalize' }}>{gender}</label>
                                     </div>
                                 </div>
-
 
 
                             </div>
